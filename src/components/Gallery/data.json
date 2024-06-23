@@ -1,0 +1,78 @@
+[
+
+    {
+        "id": 1,
+        "img": "https://i.imgur.com/mTuj5Ou.jpeg",
+        "alt": "Angkatan 1"
+    },
+    {
+        "id": 2,
+        "img": "https://i.imgur.com/ye4w45S.jpeg",
+        "alt": "Angkatan 6"
+    },
+    {
+        "id": 3,
+        "img": "https://i.imgur.com/JZTr1Ks.jpeg",
+        "alt": "Nagkatan 7"
+    },
+    {
+        "id": 4,
+        "img": "https://i.imgur.com/4rLerLR.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 5,
+        "img": "https://i.imgur.com/A3IkJJc.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 6,
+        "img": "https://i.imgur.com/yJNbMab.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 7,
+        "img": "https://i.imgur.com/27vCmSv.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 8,
+        "img": "https://i.imgur.com/hwqtXuR.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 9,
+        "img": "https://i.imgur.com/Nhke1Sf.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 10,
+        "img": "https://i.imgur.com/ps1VT0O.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 11,
+        "img": "https://i.imgur.com/wiPrV2N.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 12,
+        "img": "https://i.imgur.com/O06qtOA.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 13,
+        "img": "https://i.imgur.com/SSVsCIQ.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 14,
+        "img": "https://i.imgur.com/rWaJCfw.jpeg",
+        "alt": ""
+    },
+    {
+        "id": 15,
+        "img": "https://i.imgur.com/AwZ7YJ3.jpeg",
+        "alt": ""
+    }
+]

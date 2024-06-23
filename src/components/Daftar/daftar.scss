@@ -1,0 +1,219 @@
+:root {
+    --PrimaryColor: rgb(0,0,0);
+    --SecondaryColor: rgb(255,255,255);
+    --Gradient1: linear-gradient(to right, rgb(0,0,0), rgb(102,102,102));
+    --Gradient2: linear-gradient(to right, rgb(255,255,255), rgb(62,62,62));
+    --Text: rgb(60,60,60);
+    --Hover: rgb(80,80,80);
+}
+
+.daftar {
+    width: 100%;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    margin: auto;
+    min-height: 100vh;
+    padding: 2.5rem 8rem;
+    text-align: justify;
+
+    @media screen and (max-width: 1000px) {
+        padding: 2rem;
+    }
+
+    .title {
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            width: max-content;
+            position: relative;
+            font-size: 2.5rem;
+            margin-top: 2rem;
+            margin: auto;
+            z-index: 2;
+
+            @media screen and (max-width: 1400px) {
+                font-size: 2.2rem;
+            }
+
+            @media screen and (max-width: 1200px) {
+                font-size: 2rem;
+            }
+
+            @media screen and (max-width: 700px) {
+                font-size: 2.2rem;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 2rem;
+            }
+
+            &::after {
+                content: "";
+                width: 101px;
+                height: 8px;
+                position: absolute;
+                background: var(--Gradient1);
+                right: 0;
+                left: 15px;
+                bottom: 0;
+                border-radius: 10px;
+                z-index: -1;
+
+                @media screen and (max-width: 1400px) {
+                    left: 8px;
+                    height: 7px;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    left: 2px;
+                    height: 6px;
+                }
+
+                @media screen and (max-width: 700px) {
+                    left: 8px;
+                    height: 7px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    left: 2px;
+                    height: 6px;
+                }
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-weight: 600;
+            text-align: center;
+
+            @media screen and (max-width: 1400px) {
+                font-size: 1.1rem;
+            }
+
+            @media screen and (max-width: 1200px) {
+                font-size: 1rem;
+            }
+
+            @media screen and (max-width: 700px) {
+                font-size: .8rem;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: .7rem;
+            }
+        }
+    }
+
+    form {
+        margin-top: -4rem;
+        text-align: center;
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            text-align: left;
+
+            @media screen and (max-width: 1400px) {
+                font-size: 1.2rem;
+            }
+
+            @media screen and (max-width: 1200px) {
+                font-size: 1.1rem;
+            }
+
+            @media screen and (max-width: 700px) {
+                font-size: 1rem;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: .9rem;
+            }
+        }
+
+        input {
+            padding: .3rem 1rem;
+            border-radius: 5px;
+            border: 1px solid black;
+            width: 100%;
+
+            &::placeholder {
+                @media screen and (max-width: 1400px) {
+                    font-size: 1.1rem;
+                }
+    
+                @media screen and (max-width: 1200px) {
+                    font-size: 1rem;
+                }
+    
+                @media screen and (max-width: 700px) {
+                    font-size: .9rem;
+                }
+    
+                @media screen and (max-width: 500px) {
+                    font-size: .8rem;
+                }
+            }
+        }
+
+        button {
+            margin-top: 3rem;
+            width: 9rem;
+            height: 2.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--PrimaryColor);
+            color: white;
+
+            &:hover {
+                background-color: var(--Hover);
+                color: var(--SecondaryColor);
+                cursor: pointer;
+            }
+
+            &:disabled {
+                background-color: grey;
+                cursor: not-allowed;
+            }
+
+            @media screen and (max-width: 885px) {
+                border-radius: 8px;
+                width: 8rem;
+                height: 2.3rem;
+                font-size: .9rem;
+            }
+
+            @media screen and (max-width: 600px) {
+                border-radius: 6px;
+                width: 7rem;
+                height: 2rem;
+                font-size: .85rem;
+            }
+        }
+    }
+
+    .infowa {
+        font-weight: 600;
+        text-align: center;
+        font-size: 1.2rem;
+
+        @media screen and (max-width: 1400px) {
+            font-size: 1.1rem;
+        }
+
+        @media screen and (max-width: 1200px) {
+            font-size: 1rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            font-size: .8rem;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: .7rem;
+        }
+    }
+}

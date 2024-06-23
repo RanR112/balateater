@@ -1,0 +1,226 @@
+:root {
+    --PrimaryColor: rgb(0,0,0);
+    --SecondaryColor: rgb(255,255,255);
+    --Gradient1: linear-gradient(to right, rgb(0,0,0), rgb(102,102,102));
+    --Gradient2: linear-gradient(to right, rgb(255,255,255), rgb(62,62,62));
+    --Text: rgb(60, 60, 60);
+    --Hover: rgb(80,80,80);
+}
+
+.gallery {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    min-height: 100vh;
+    background-image: url(../../Assets/gallerybg.jpg);
+    position: relative;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+
+    .cover {
+        align-items: center;
+        justify-content: center;
+        padding: 2.5rem 8rem;
+
+        @media screen and (max-width: 1200px) {
+            padding: 2.5rem 4rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            padding: 2.5rem 2rem;
+        }
+
+        .title {
+            width: max-content;
+            position: relative;
+            font-size: 2.5rem;
+            margin-top: 2rem;
+            margin: auto;
+            z-index: 2;
+
+            @media screen and (max-width: 1400px) {
+                font-size: 2.2rem;
+            }
+
+            @media screen and (max-width: 1200px) {
+                font-size: 2rem;
+            }
+
+            @media screen and (max-width: 700px) {
+                font-size: 2.2rem;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 2rem;
+            }
+
+            &::after {
+                content: "";
+                width: 101px;
+                height: 8px;
+                position: absolute;
+                background: var(--Gradient1);
+                right: 0;
+                left: 20px;
+                bottom: 0;
+                border-radius: 10px;
+                z-index: -1;
+
+                @media screen and (max-width: 1400px) {
+                    left: 10px;
+                    height: 7px;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    left: 7px;
+                    height: 6px;
+                }
+
+                @media screen and (max-width: 700px) {
+                    left: 10px;
+                    height: 7px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    left: 7px;
+                    height: 6px;
+                }
+            }
+        }
+
+        .content {
+            h1 {
+                font-size: 1.8rem;
+                width: max-content;
+                margin: 2rem 0 1rem 0;
+                z-index: 2;
+                position: relative;
+
+                @media screen and (max-width: 1200px) {
+                    font-size: 1.5rem;
+                }
+                
+                @media screen and (max-width: 1000px) {
+                    font-size: 1.3rem;
+                }
+
+                @media screen and (max-width: 700px) {
+                    font-size: 1.2rem;
+                }
+
+                @media screen and (max-width: 500px) {
+                    font-size: 1.1rem;
+                }
+
+                &::after {
+                    content: "";
+                    width: 101px;
+                    height: 7px;
+                    position: absolute;
+                    background: var(--Gradient1);
+                    left: 0;
+                    bottom: 0;
+                    border-radius: 10px;
+                    z-index: -1;
+
+                    @media screen and (max-width: 1400px) {
+                        height: 6px;
+                        width: 91px;
+                    }
+    
+                    @media screen and (max-width: 1200px) {
+                        height: 5px;
+                        width: 81px;
+                    }
+    
+                    @media screen and (max-width: 700px) {
+                        height:4px;
+                        width: 71px;
+                    }
+    
+                    @media screen and (max-width: 500px) {
+                        height: 3px;
+                        width: 61px;
+                    }
+                }
+            }
+
+            .achievement {
+                p {
+
+                    a {
+                        color: black;
+
+                        &:hover {
+                            color: var(--Hover);
+                            cursor: pointer;
+                        }
+                    }
+                    
+                    @media screen and (max-width: 1200px) {
+                        font-size: .9rem;
+                    }
+                    
+                    @media screen and (max-width: 1000px) {
+                        font-size: .8rem;
+                    }
+
+                    @media screen and (max-width: 700px) {
+                        font-size: .7rem;
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        font-size: .55rem;
+                    }
+                }
+            }
+
+            .memories {
+                justify-content: center;
+                
+
+                .dataFoto {
+                    gap: .5rem;
+                    display: grid;
+                    grid-template-columns: repeat(5,1fr);
+
+                    @media screen and (max-width: 1200px) {
+                        grid-template-columns: repeat(4,1fr);
+                    }
+                    
+                    @media screen and (max-width: 1000px) {
+                        grid-template-columns: repeat(3,1fr);
+                    }
+
+                    @media screen and (max-width: 700px) {
+                        grid-template-columns: repeat(2,1fr);
+                    }
+
+                    .foto {
+                        height: 100%;
+                        row-gap: 10px;
+                        border-radius: 10px;
+                        align-items: center;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            transition: 2s ease;
+                            object-fit: cover;
+                        }
+                    
+                        &:hover {
+                            img {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
