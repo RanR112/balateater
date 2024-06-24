@@ -35,7 +35,7 @@ const Gallery = () => {
                             8. FLS2N SMA 2024 Cabang Lomba Monolog tingkat Kabupaten Banjarnegara <b>(Juara 1)</b><br />
                             9. FLS2N SMA 2024 Cabang Lomba Baca Puisi tingkat Kabupaten Banjarnegara <b>(Juara 3)</b><br />
                             <br />
-                            <a href="https://drive.google.com/drive/folders/1VyLMpW3YZ5o6Q8RIVg9I9Uv1E5pg9yp-"><b>Naskah yang sudah pernah dibawakan</b></a>
+                            <a href="https://drive.google.com/drive/folders/1VyLMpW3YZ5o6Q8RIVg9I9Uv1E5pg9yp-"><b><pre>Naskah Yang Sudah Pernah Dibawakan    « Klik disini</pre></b></a>
                             <br />
                             <br />
                         </p>

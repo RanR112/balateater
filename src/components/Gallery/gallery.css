@@ -168,7 +168,7 @@
   }
 }
 .gallery .cover .content .achievement p a {
-  color: black;
+  color: rgb(27, 19, 61);
 }
 .gallery .cover .content .achievement p a:hover {
   color: var(--Hover);
