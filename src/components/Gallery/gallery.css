@@ -38,7 +38,6 @@
   }
 }
 .gallery .cover .title {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   position: relative;
@@ -105,7 +104,6 @@
 }
 .gallery .cover .content h1 {
   font-size: 1.8rem;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   margin: 2rem 0 1rem 0;
@@ -232,5 +230,4 @@
 }
 .gallery .cover .content .memories .dataFoto .foto:hover img {
   cursor: pointer;
-}
-/*# sourceMappingURL=gallery.css.map */
+}/*# sourceMappingURL=gallery.css.map */

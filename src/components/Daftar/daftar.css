@@ -27,7 +27,6 @@
   justify-content: center;
 }
 .daftar .title h1 {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   position: relative;
@@ -249,5 +248,4 @@
   .daftar .infowa {
     font-size: 0.7rem;
   }
-}
-/*# sourceMappingURL=daftar.css.map */
+}/*# sourceMappingURL=daftar.css.map */

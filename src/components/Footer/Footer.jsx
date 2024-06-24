@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="wawan flex" data-aos="fade-up">
                 <div className="text grid">
                     <h3>Singgih Wirawan (Wawan)</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure voluptate voluptas veniam, accusamus nobis repellendus! Atque optio repellendus at enim delectus aspernatur, nemo nobis rem reiciendis qui iure quod voluptate incidunt unde voluptatum dolores officiis eligendi magnam minima blanditiis recusandae placeat quibusdam! Itaque, nemo eveniet. Veniam, adipisci. Quia, laboriosam nemo.</p>
+                    <p>Halo sobat bala!!! kenalin nih, pelatih Bala Teater. Bapak Singgih Wirawan (Pak wawan) atau yang akrab dipanggil "Bapake" tinggal di Masaran, Kec. Bawang, Banjarnegara. Bapake lahir pada tanggal 2 Oktober tahun 1967. Pak wawan yang akrab dipanggil bapake telah mengajar Bala Teater sejak tahun 2015 hingga sekarang. Beliau adalah lulusan FISIP Unsoed dan juga pernah menjadi generasi pertama sekaligus pendiri Teater SiAnak FISIP Unsoed. Selain fokus untuk mengajar ilmu Teater, beliau juga selalu memotivasi terutama melalui cerita pengalaman yang telah dilalui hingga kini. Sehingga anak-anak Bala Teater tak pernah bosan untuk selalu berproses.</p>
                 </div>
                 <img className="imgwawan" src={Wawan} alt="Pak Wawan" />
             </div>
