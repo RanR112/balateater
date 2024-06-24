@@ -27,6 +27,7 @@
   justify-content: center;
 }
 .daftar .title h1 {
+  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   position: relative;
@@ -120,6 +121,11 @@
 .daftar form {
   margin-top: -4rem;
   text-align: center;
+}
+@media screen and (max-height: 700px) {
+  .daftar form {
+    margin-top: -1rem;
+  }
 }
 .daftar form h3 {
   font-size: 1.3rem;
@@ -243,4 +249,5 @@
   .daftar .infowa {
     font-size: 0.7rem;
   }
-}/*# sourceMappingURL=daftar.css.map */
+}
+/*# sourceMappingURL=daftar.css.map */
