@@ -9,6 +9,8 @@ const Daftar = () => {
 
     const isFormValid = nama && nomor && kelas;
 
+    
+
     const formRef = useRef(null);
 
     useEffect(() => {
@@ -22,18 +24,7 @@ const Daftar = () => {
                 method: 'POST',
                 body: data,
             })
-            .then(() => {
-                Swal.fire({
-                    title: "Pendaftaran Dibuat",
-                    text: "Harap Tunggu Informasi Selanjutnya",
-                    icon: "success",
-                    confirmButtonColor: '#000000'
-                });
-                setNama('');
-                setNomor('');
-                setKelas('');
-                form.reset();
-            });
+            .then(() => {});
         };
 
     form.addEventListener("submit", handleSubmit);
@@ -42,6 +33,22 @@ const Daftar = () => {
         form.removeEventListener("submit", handleSubmit);
         };
     }, []);
+
+    const sendData = () => {
+        setTimeout(() => {
+            Swal.fire({
+                title: "Pendaftaran Dibuat",
+                text: "Harap Tunggu Informasi Selanjutnya",
+                icon: "success",
+                confirmButtonColor: '#000000'
+            });
+            setNama('');
+            setNomor('');
+            setKelas('');
+            formRef.current.reset();
+        }, 500);
+    }
+    
 
     return (
         <section className='daftar' id='Daftar'>
@@ -83,7 +90,7 @@ const Daftar = () => {
                     />
                 </div>
 
-                <button type="submit" disabled={!isFormValid}>Daftar</button>
+                <button type="submit" onClick={sendData} disabled={!isFormValid}>Daftar</button>
             </form>
 
             <p className='infowa' data-aos="fade-up">*Informasi selanjutnya akan dikirimkan melalui WhatsApp*</p>
