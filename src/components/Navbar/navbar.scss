@@ -295,9 +295,30 @@
                         padding: 0 0.45rem;
                         font-size: 1rem;
                         font-weight: 600;
+                        display: inline-block;
+                        position: relative;
 
-                        &:hover {
+                        &::after {
+                            background: none repeat scroll 0 0 transparent;
+                            bottom: 0;
+                            content: "";
+                            display: block;
+                            height: 2px;
+                            left: 50%;
+                            position: absolute;
+                            background: var(--PrimaryColor);
+                            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                            width: 0;
+                        }
+
+                        &:hover{
                             color: var(--PrimaryColor);
+                            transition: .3s;
+                        }
+
+                        &:hover::after {
+                            width: 100%; 
+                            left: 0; 
                         }
                     }
                 }               
