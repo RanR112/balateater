@@ -31,7 +31,7 @@ const Footer = () => {
                 </div>
                 <div className="contact grid">
                     <h4>Contact Us</h4>
-                    <a href="https://wa.me/+6283144954104"><FaWhatsapp className='icon'/> WhatsApp</a>
+                    <a href="https://wa.me/+628882401300"><FaWhatsapp className='icon'/> WhatsApp</a>
                 </div>
             </div>
             <div className="footerDiv flex">
