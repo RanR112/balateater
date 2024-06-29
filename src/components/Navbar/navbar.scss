@@ -17,7 +17,7 @@
     padding: 0.5rem 4rem !important;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
-    transition: .3s ease-in;
+    transition: .5s ease-in;
 
     .logo {
         color: var(--PrimaryColor);
@@ -28,6 +28,7 @@
 
         .icon {
             width: 3.5rem;
+            filter: drop-shadow(0 2px 4px rgba(140, 140, 141, 0.6));
         }
 
         h1 {
@@ -37,6 +38,7 @@
             margin-left: 20px;
             margin-right: -8px;
             font-weight: bolder !important;
+            text-shadow: 0 2px 4px rgba(140, 140, 141, 0.6);;
         }
     }
 
@@ -65,7 +67,7 @@
     width: 100%;
     padding: 0.5rem 4rem !important;
     z-index: 1000;
-    transition: .3s ease-in;
+    transition: .5s ease-in;
 
     .logo {
         color: var(--SecondaryColor);
@@ -76,6 +78,7 @@
 
         .icon {
             width: 3.5rem;
+            filter: drop-shadow(0 2px 4px rgba(52, 52, 52, 0.6));
         }
 
         h1 {
@@ -85,6 +88,7 @@
             margin-left: 20px;
             margin-right: -8px;
             font-weight: bolder !important;
+            text-shadow: 0 2px 4px rgba(175, 175, 175, 0.6);
         }
     }
 
@@ -278,7 +282,7 @@
 
         .logo {
             .icon {
-                width: 4.5rem;
+                width: 3.8rem;
             }
         }
 
@@ -331,7 +335,7 @@
 
         .logo {
             .icon {
-                width: 4.5rem;
+                width: 3.8rem;
             }
         }
 
@@ -344,13 +348,34 @@
 
                 .navItem {
                     .navLink {
-                        color: var(--Text);
+                        color: var(--SecondaryColor);
                         padding: 0 0.45rem;
                         font-size: 1rem;
                         font-weight: 600;
+                        display: inline-block;
+                        position: relative;
 
-                        &:hover {
-                            color: var(--PrimaryColor);
+                        &::after {
+                            background: none repeat scroll 0 0 transparent;
+                            bottom: 0;
+                            content: "";
+                            display: block;
+                            height: 2px;
+                            left: 50%;
+                            position: absolute;
+                            background: var(--Text);
+                            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                            width: 0;
+                        }
+
+                        &:hover{
+                            color: var(--Text);
+                            transition: .3s;
+                        }
+
+                        &:hover::after {
+                            width: 100%; 
+                            left: 0; 
                         }
                     }
                 }               

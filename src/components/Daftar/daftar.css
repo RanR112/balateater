@@ -194,7 +194,7 @@
   width: 9rem;
   height: 2.5rem;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   background-color: var(--PrimaryColor);
   color: white;
@@ -207,6 +207,11 @@
 .daftar form button:disabled {
   background-color: grey;
   cursor: not-allowed;
+}
+.daftar form button:active {
+  background: none;
+  border: 2px solid black;
+  color: black;
 }
 @media screen and (max-width: 885px) {
   .daftar form button {

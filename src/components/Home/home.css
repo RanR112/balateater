@@ -129,6 +129,10 @@
   background-color: var(--Hover);
   color: var(--SecondaryColor);
 }
+.home .homeContent .textDiv .btnDaftar:active {
+  background: none;
+  border: 1px solid white;
+}
 @media screen and (max-width: 885px) {
   .home .homeContent .textDiv .btnDaftar {
     border-radius: 8px;
