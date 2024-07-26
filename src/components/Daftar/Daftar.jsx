@@ -6,49 +6,108 @@ const Daftar = () => {
     const [nama, setNama] = useState('');
     const [nomor, setNomor] = useState('');
     const [kelas, setKelas] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const isFormValid = nama && nomor && kelas;
 
-    
-
     const formRef = useRef(null);
+
+    const checkAndSubmit = async (formData) => {
+        try {
+            const response = await fetch(formRef.current.action + '?type=check', {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+
+            if (result.result === 'not_found') {
+                submitData(formData);
+            } else if (result.result === 'found') {
+                Swal.fire({
+                    title: 'Anda Sudah Terdaftar',
+                    text: 'Apakah Anda ingin mengubah informasi Anda?',
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#000000",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Ya, ubah dengan yang baru",
+                    cancelButtonText: "Tidak"
+                }).then(async (confirmation) => {
+                    if (confirmation.isConfirmed) {
+                        submitData(formData, true);
+                    } else {
+                        resetForm();
+                    }
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Terjadi kesalahan, silakan coba lagi.',
+                icon: 'error',
+                confirmButtonColor: '#000000'
+            });
+        }
+    };
+
+    const submitData = async (formData, isUpdate = false) => {
+        try {
+            const response = await fetch(formRef.current.action + (isUpdate ? '?type=update' : ''), {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+
+            if (result.result === 'success' || result.result === 'update') {
+                Swal.fire({
+                    title: result.result === 'success' ? 'Pendaftaran Dibuat' : 'Data Berhasil Diperbarui',
+                    text: 'Harap Tunggu Informasi Selanjutnya',
+                    icon: 'success',
+                    confirmButtonColor: '#000000'
+                });
+                resetForm();
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Terjadi kesalahan, silakan coba lagi.',
+                    icon: 'error',
+                    confirmButtonColor: '#000000'
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Terjadi kesalahan, silakan coba lagi.',
+                icon: 'error',
+                confirmButtonColor: '#000000'
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    const resetForm = () => {
+        setNama('');
+        setNomor('');
+        setKelas('');
+        formRef.current.reset();
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        const formData = new FormData(formRef.current);
+        await checkAndSubmit(formData);
+    };
 
     useEffect(() => {
         const form = formRef.current;
-        
-        const handleSubmit = (e) => {
-            e.preventDefault();
-            const data = new FormData(form);
-            const action = e.target.action;
-            fetch(action, {
-                method: 'POST',
-                body: data,
-            })
-            .then(() => {});
+        form.addEventListener("submit", handleSubmit);
+
+        return () => {
+            form.removeEventListener("submit", handleSubmit);
         };
-
-    form.addEventListener("submit", handleSubmit);
-
-    return () => {
-        form.removeEventListener("submit", handleSubmit);
-        };
-    }, []);
-
-    const sendData = () => {
-        setTimeout(() => {
-            Swal.fire({
-                title: "Pendaftaran Dibuat",
-                text: "Harap Tunggu Informasi Selanjutnya",
-                icon: "success",
-                confirmButtonColor: '#000000'
-            });
-            setNama('');
-            setNomor('');
-            setKelas('');
-            formRef.current.reset();
-        }, 500);
-    }
-    
+    });
 
     return (
         <section className='daftar' id='Daftar'>
@@ -56,9 +115,8 @@ const Daftar = () => {
                 <h1>Daftar</h1>
                 <p>Silahkan isi form dibawah ini jika Anda berminat untuk bergabung</p>
             </div>
-            
 
-            <form ref={formRef} method='POST' action="https://script.google.com/macros/s/AKfycbw-kPuVeN3LL7DjZ9wWJWXaaNedhutjACHXmsGpDVln35FRicnDV8j81OMyczQxX22p/exec" data-aos="fade-up">
+            <form ref={formRef} method='POST' action="https://script.google.com/macros/s/AKfycbxppzucG-idDMNHl86WdIZpEmygkL-b5PqEHEdhvOQzaNAXPI0Qk_XdNS04oKTo5Nh1/exec" data-aos="fade-up">
                 <div className="nama">
                     <h3>Nama</h3>
                     <input 
@@ -75,8 +133,8 @@ const Daftar = () => {
                         type="text" 
                         name='Kelas'
                         placeholder='Masukkan Kelas Anda'
-                        value={nomor}
-                        onChange={(e) => setNomor(e.target.value)}
+                        value={kelas}
+                        onChange={(e) => setKelas(e.target.value)}
                     />
                 </div>
                 <div className="nomor">
@@ -85,17 +143,16 @@ const Daftar = () => {
                         type="text" 
                         name='Nomor'
                         placeholder='Masukkan Nomor Anda'
-                        value={kelas}
-                        onChange={(e) => setKelas(e.target.value)}
+                        value={nomor}
+                        onChange={(e) => setNomor(e.target.value)}
                     />
                 </div>
-
-                <button type="submit" onClick={sendData} disabled={!isFormValid}>Daftar</button>
+                <button type="submit" disabled={!isFormValid || isSubmitting}>Daftar</button>
             </form>
 
             <p className='infowa' data-aos="fade-up">*Informasi selanjutnya akan dikirimkan melalui WhatsApp*</p>
         </section>
     );
-}
+};
 
 export default Daftar;
