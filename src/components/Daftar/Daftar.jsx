@@ -7,6 +7,7 @@ const Daftar = () => {
     const [nomor, setNomor] = useState('');
     const [kelas, setKelas] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const isFormValid = nama && nomor && kelas;
 
@@ -19,6 +20,7 @@ const Daftar = () => {
                 body: formData,
             });
             const result = await response.json();
+            setIsLoading(false);
 
             if (result.result === 'not_found') {
                 submitData(formData);
@@ -34,9 +36,11 @@ const Daftar = () => {
                     cancelButtonText: "Tidak"
                 }).then(async (confirmation) => {
                     if (confirmation.isConfirmed) {
+                        setIsLoading(true);
                         submitData(formData, true);
                     } else {
                         resetForm();
+                        setIsSubmitting(false);
                     }
                 });
             }
@@ -57,6 +61,7 @@ const Daftar = () => {
                 body: formData,
             });
             const result = await response.json();
+            setIsLoading(false);
 
             if (result.result === 'success' || result.result === 'update') {
                 Swal.fire({
@@ -96,11 +101,14 @@ const Daftar = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setIsLoading(true);
         const formData = new FormData(formRef.current);
         await checkAndSubmit(formData);
     };
 
     useEffect(() => {
+        isLoading || isSubmitting ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto';
+
         const form = formRef.current;
         form.addEventListener("submit", handleSubmit);
 
@@ -149,6 +157,8 @@ const Daftar = () => {
                 </div>
                 <button type="submit" disabled={!isFormValid || isSubmitting}>Daftar</button>
             </form>
+
+            {isLoading && <div className="load"><div className="loader"></div></div>}
 
             <p className='infowa' data-aos="fade-up">*Informasi selanjutnya akan dikirimkan melalui WhatsApp*</p>
         </section>
